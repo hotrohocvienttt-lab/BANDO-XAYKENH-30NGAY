@@ -390,6 +390,61 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ defaultParti
                     </div>
                   </div>
 
+                  {/* Participation Preference */}
+                  <div className="space-y-2 pt-1">
+                    <label className="block text-xs font-extrabold text-[#0B2D46]">
+                      Hình thức hỗ trợ sau khi mua tài liệu <span className="text-red-500">*</span>
+                    </label>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                      <button
+                        type="button"
+                        onClick={() => setParticipationPreference("Workshop Zoom")}
+                        className={`p-3 rounded-xl border-2 text-left transition-all flex items-start gap-2.5 cursor-pointer ${
+                          participationPreference === "Workshop Zoom"
+                            ? "border-[#0B9693] bg-[#0B9693]/10 text-[#0B2D46] shadow-sm"
+                            : "border-slate-200 bg-slate-50 text-slate-600 hover:border-slate-300"
+                        }`}
+                      >
+                        <input
+                          type="radio"
+                          name="participation"
+                          checked={participationPreference === "Workshop Zoom"}
+                          onChange={() => setParticipationPreference("Workshop Zoom")}
+                          className="mt-0.5 text-[#0B9693] focus:ring-[#0B9693]"
+                        />
+                        <div>
+                          <div className="font-black text-xs text-[#0B2D46]">Zoom Online Trực Tuyến</div>
+                          <div className="text-[11px] text-slate-500 mt-0.5">Học & hỏi đáp từ xa linh hoạt</div>
+                        </div>
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => setParticipationPreference("Offline TP.HCM")}
+                        className={`p-3 rounded-xl border-2 text-left transition-all flex items-start gap-2.5 cursor-pointer ${
+                          participationPreference === "Offline TP.HCM"
+                            ? "border-[#FF4F00] bg-orange-50 text-[#0B2D46] shadow-sm"
+                            : "border-slate-200 bg-slate-50 text-slate-600 hover:border-slate-300"
+                        }`}
+                      >
+                        <input
+                          type="radio"
+                          name="participation"
+                          checked={participationPreference === "Offline TP.HCM"}
+                          onChange={() => setParticipationPreference("Offline TP.HCM")}
+                          className="mt-0.5 text-[#FF4F00] focus:ring-[#FF4F00]"
+                        />
+                        <div>
+                          <div className="font-black text-xs text-[#0B2D46] flex items-center gap-1">
+                            <span>Offline Tại TP.HCM</span>
+                            <span className="bg-[#FF4F00] text-white text-[9px] font-bold px-1.5 py-0.2 rounded">Hot</span>
+                          </div>
+                          <div className="text-[11px] text-slate-500 mt-0.5">Giao lưu trực tiếp Team YDVN</div>
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+
                 </div>
 
                 {/* 2. Payment Options */}
