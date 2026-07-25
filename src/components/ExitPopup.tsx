@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { X, HelpCircle, ArrowRight } from "lucide-react";
+import { X, Gift, ArrowRight, Sparkles } from "lucide-react";
 import { trackEvent } from "../utils/tracking";
 
 interface ExitPopupProps {
@@ -40,7 +40,10 @@ export const ExitPopup: React.FC<ExitPopupProps> = ({ onConsultClick }) => {
 
   return (
     <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-300">
-      <div className="bg-[#FFFEFB] border-2 border-[#0B2D46] rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-5 text-center relative shadow-2xl">
+      <div className="bg-[#FFFEFB] border-2 border-[#FF4F00] rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-5 text-center relative shadow-2xl overflow-hidden">
+        {/* Decorative Top Accent Bar */}
+        <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#FF4F00] via-amber-400 to-[#0B9693]" />
+
         {/* Highly Visible Close Button */}
         <button
           onClick={() => setIsOpen(false)}
@@ -52,36 +55,38 @@ export const ExitPopup: React.FC<ExitPopupProps> = ({ onConsultClick }) => {
           <span className="hidden sm:inline text-xs font-bold pr-1">Đóng</span>
         </button>
 
-        <div className="w-14 h-14 rounded-2xl bg-[#FFF1E6] text-[#FF4F00] flex items-center justify-center font-bold mx-auto border border-amber-200 mt-2 sm:mt-0">
-          <HelpCircle className="w-8 h-8" />
+        <div className="w-16 h-16 rounded-2xl bg-amber-100 text-[#FF4F00] flex items-center justify-center font-bold mx-auto border-2 border-amber-300 mt-2 sm:mt-0 shadow-sm">
+          <Gift className="w-9 h-9 animate-bounce" />
         </div>
 
-        <div className="space-y-2">
-          <span className="text-xs font-black text-[#FF4F00] uppercase tracking-wider bg-amber-50 px-3 py-1 rounded-full border border-amber-200">
-            HỖ TRỢ TƯ VẤN MIỄN PHÍ
-          </span>
-          <h3 className="text-xl sm:text-2xl font-black text-[#0B2D46]">
-            ANH/CHỊ CÒN BĂN KHOĂN?
+        <div className="space-y-2.5">
+          <div className="inline-flex items-center gap-1.5 text-xs font-black text-[#FF4F00] uppercase tracking-wider bg-amber-100/80 px-3.5 py-1 rounded-full border border-amber-300">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>ƯU ĐÃI ĐẶC BIỆT KHI ĐĂNG KÝ NGAY</span>
+          </div>
+          <h3 className="text-xl sm:text-2xl font-black text-[#0B2D46] leading-tight">
+            NHẬN MÃ GIẢM 100K & BỘ MẪU KỊCH BẢN Y TẾ!
           </h3>
           <p className="text-slate-600 text-sm leading-relaxed">
-            Để lại thông tin, Team YDVN sẽ giúp anh/chị kiểm tra xem bộ cẩm nang & công cụ 30 ngày này có phù hợp nhất với mô hình phòng khám/chuyên gia của mình hay không.
+            Đăng ký sở hữu Bản Đồ Xây Kênh 30 Ngày ngay bây giờ để áp dụng ưu đãi <strong className="text-[#FF4F00]">giảm 100K (chỉ còn 699.000đ)</strong> cùng trọn bộ Quà Tặng Độc Quyền từ YDVN.
           </p>
         </div>
 
         <div className="pt-2">
           <button
             onClick={handleAction}
-            className="w-full bg-[#FF4F00] hover:bg-[#E04500] text-white font-black text-sm sm:text-base py-4 rounded-2xl shadow-xl transition-all cursor-pointer flex items-center justify-center gap-2"
+            className="w-full bg-[#FF4F00] hover:bg-[#E04500] text-white font-black text-sm sm:text-base py-4 px-6 rounded-2xl shadow-xl transition-all transform hover:-translate-y-0.5 cursor-pointer flex items-center justify-center gap-2 text-center"
           >
-            <span>TÔI CẦN ĐƯỢC TƯ VẤN</span>
-            <ArrowRight className="w-5 h-5" />
+            <span>NHẬN ƯU ĐÃI & ĐĂNG KÝ NGAY</span>
+            <ArrowRight className="w-5 h-5 shrink-0" />
           </button>
         </div>
 
-        <p className="text-xs text-slate-400 italic">
-          Không chèo kéo • Không spam • Tư vấn đúng nhu cầu thực tế
+        <p className="text-xs text-slate-500 font-medium">
+          ⚡ Áp dụng duy nhất trong lượt truy cập này • Hỗ trợ kích hoạt tức thì qua Zalo
         </p>
       </div>
     </div>
   );
 };
+
