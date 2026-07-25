@@ -1,0 +1,6 @@
+{
+  "name": "Bản Đồ Xây Kênh Y Tế 30 Ngày Thực Chiến Cùng AI",
+  "description": "Landing page bán hàng & thu lead chương trình Bản Đồ Xây Kênh Y Tế 30 Ngày Thực Chiến Cùng AI dành cho Bác sĩ, Dược sĩ, Chủ phòng khám và Nhà thuốc.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
