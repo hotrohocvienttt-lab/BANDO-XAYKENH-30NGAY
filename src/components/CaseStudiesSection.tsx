@@ -19,12 +19,12 @@ export const CaseStudiesSection: React.FC = () => {
     {
       id: "dr-chubby",
       name: "DR CHUBBY",
-      image: "/uploads/bac-si-ydvn-xay-kenh.jpg",
+      image: "/uploads/dr-chubby.jpg",
       bgClass: "bg-slate-900",
       fitClass: "object-cover",
       imgPlaceholder: "DỰ ÁN DR CHUBBY",
       desc: "Đồng hành xây dựng thương hiệu cá nhân Bác sĩ chuyên khoa",
-      result: "Phát triển kênh TikTok & Facebook Y tế uy tín",
+      result: "Team Thành trực tiếp xây kênh Dr Chubby 50 ngày đạt nút bạc youtube 2020",
     },
     {
       id: "duoc-si-tra",
@@ -105,8 +105,14 @@ export const CaseStudiesSection: React.FC = () => {
                       alt={c.name}
                       className={`w-full h-full ${c.fitClass} group-hover:scale-105 transition-transform duration-300`}
                       referrerPolicy="no-referrer"
-                      onError={() => {
-                        setFailedImages(prev => ({ ...prev, [c.id]: true }));
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        if (!target.dataset.tried) {
+                          target.dataset.tried = "true";
+                          target.src = c.image.replace("/uploads/", "/");
+                        } else {
+                          setFailedImages(prev => ({ ...prev, [c.id]: true }));
+                        }
                       }}
                     />
                   ) : (
@@ -140,6 +146,113 @@ export const CaseStudiesSection: React.FC = () => {
           ))}
         </div>
 
+        {/* Banner: 500+ Partners & Stage/Workshop Training */}
+        <div className="mt-12 bg-gradient-to-br from-[#0B2D46] via-[#0e3b5c] to-[#0B2D46] rounded-3xl p-6 sm:p-10 text-white shadow-xl border border-slate-700/60 overflow-hidden relative">
+          <div className="absolute -top-24 -right-24 w-72 h-72 bg-[#FF4F00]/10 rounded-full blur-3xl pointer-events-none"></div>
+          
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            {/* Text column */}
+            <div className="lg:col-span-6 space-y-4 text-center lg:text-left">
+              <span className="inline-block text-xs font-black text-[#FF4F00] uppercase tracking-wider bg-amber-500/10 px-3.5 py-1.5 rounded-full border border-amber-500/30">
+                ⚡ QUY MÔ & TẦM INH HƯỞNG
+              </span>
+              
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-white leading-tight">
+                VÀ HƠN <span className="text-[#FF4F00]">500+ ĐỐI TÁC LỚN NHỎ</span> CẢ NƯỚC ĐÃ ĐƯỢC TƯ VẤN & ĐÀO TẠO
+              </h3>
+
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                Thành Thật Thà & YDVN đã trực tiếp đứng trên hàng chục sân khấu hội thảo, lớp đào tạo trực tiếp và khóa học thực chiến – truyền cảm hứng và bàn giao quy trình xây kênh AI cho hàng ngàn bác sĩ, dược sĩ, chủ cơ sở y tế khắp các tỉnh thành.
+              </p>
+
+              <div className="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                <div className="bg-white/10 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-white/10 text-center">
+                  <span className="block text-xl font-black text-[#FF4F00]">500+</span>
+                  <span className="text-xs text-slate-300 font-medium">Đối Tác Y Tế</span>
+                </div>
+                <div className="bg-white/10 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-white/10 text-center">
+                  <span className="block text-xl font-black text-[#0B9693]">1000+</span>
+                  <span className="text-xs text-slate-300 font-medium">Dự Án Đã Tư Vấn</span>
+                </div>
+                <div className="bg-white/10 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-white/10 text-center">
+                  <span className="block text-xl font-black text-amber-400">63</span>
+                  <span className="text-xs text-slate-300 font-medium">Tỉnh Thành</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Images Showcase */}
+            <div className="lg:col-span-6 grid grid-cols-2 gap-3.5">
+              <div className="relative group rounded-2xl overflow-hidden border border-slate-600 shadow-lg aspect-[4/3] bg-slate-800">
+                <img
+                  src="/uploads/su-kien-team-2024.jpg"
+                  alt="Sân khấu đào tạo YDVN"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = "/uploads/su-kien-thanh-cam-sach-ai.jpg";
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-2.5">
+                  <span className="text-[11px] font-bold text-white leading-tight">
+                    🎤 Sân khấu & Sự kiện YDVN
+                  </span>
+                </div>
+              </div>
+
+              <div className="relative group rounded-2xl overflow-hidden border border-slate-600 shadow-lg aspect-[4/3] bg-slate-800">
+                <img
+                  src="/uploads/su-kien-thanh-cam-sach-ai.jpg"
+                  alt="Thành Thật Thà chia sẻ quy trình AI Y tế"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = "/uploads/anh-thanh-dao-tao-online.jpg";
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-2.5">
+                  <span className="text-[11px] font-bold text-white leading-tight">
+                    📚 Đào tạo & Chuyển giao AI
+                  </span>
+                </div>
+              </div>
+
+              <div className="relative group rounded-2xl overflow-hidden border border-slate-600 shadow-lg aspect-[4/3] bg-slate-800">
+                <img
+                  src="/uploads/anh-thanh-dao-tao-online.jpg"
+                  alt="Đào tạo Online trực tiếp cho học viên"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = "/uploads/mat-tien-pk-hoc-vien.jpg";
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-2.5">
+                  <span className="text-[11px] font-bold text-white leading-tight">
+                    💻 Lớp học thực chiến Online
+                  </span>
+                </div>
+              </div>
+
+              <div className="relative group rounded-2xl overflow-hidden border border-slate-600 shadow-lg aspect-[4/3] bg-slate-800">
+                <img
+                  src="/uploads/mat-tien-pk-hoc-vien.jpg"
+                  alt="Đồng hành thực địa tại các phòng khám"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = "/uploads/hoc-vien-cam-on.jpg";
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-2.5">
+                  <span className="text-[11px] font-bold text-white leading-tight">
+                    🏥 Đồng hành tại phòng khám
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
