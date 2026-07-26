@@ -20,7 +20,7 @@ export const CaseStudiesSection: React.FC = () => {
     {
       id: "dr-chubby",
       name: "DR CHUBBY",
-      image: "/uploads/dr-chubby.jpg",
+      image: "/uploads/dr-chubby.jpg?v=3",
       bgClass: "bg-slate-900",
       fitClass: "object-cover",
       imgPlaceholder: "DỰ ÁN DR CHUBBY",
