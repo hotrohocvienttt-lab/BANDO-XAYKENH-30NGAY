@@ -3,6 +3,7 @@ import { ArrowRight, ShieldCheck, Sparkles, Play, Video } from "lucide-react";
 import { CONFIG } from "../config";
 import { trackEvent } from "../utils/tracking";
 import { YdvnLogo } from "./YdvnLogo";
+import { SafeImage } from "./SafeImage";
 
 interface HeroSectionProps {
   onPrimaryCta: () => void;
@@ -183,17 +184,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onPrimaryCta }) => {
             {/* Founder Thành Thật Thà Brand Badge Frame */}
             <div className="bg-[#FFF1E6] border border-amber-200/80 rounded-3xl p-4 sm:p-5 shadow-md flex items-center gap-4">
               <div className="relative shrink-0">
-                <img
+                <SafeImage
                   src="/uploads/anh-dai-dien-anh-thanh.jpeg"
+                  fallbackSrc="/anh-thanh.jpeg"
                   alt="THÀNH THẬT THÀ"
                   className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover object-top border-2 border-amber-300 shadow-md"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    if (!target.dataset.tried) {
-                      target.dataset.tried = 'true';
-                      target.src = '/anh-thanh.jpeg';
-                    }
-                  }}
                 />
                 <div className="absolute -bottom-1 -right-1 bg-[#0B2D46] text-amber-300 p-1 rounded-lg border border-amber-300/60 shadow-xs">
                   <YdvnLogo className="w-4 h-4" />

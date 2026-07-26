@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Building2, Image } from "lucide-react";
 import { trackEvent } from "../utils/tracking";
+import { SafeImage } from "./SafeImage";
 
 export const CaseStudiesSection: React.FC = () => {
   const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
@@ -100,19 +101,12 @@ export const CaseStudiesSection: React.FC = () => {
                 {/* Image / Case Study Frame */}
                 <div className={`aspect-[16/10] ${c.bgClass} rounded-2xl flex flex-col items-center justify-center text-center border border-slate-200 relative overflow-hidden group shadow-inner`}>
                   {c.image && !failedImages[c.id] ? (
-                    <img
+                    <SafeImage
                       src={c.image}
                       alt={c.name}
                       className={`w-full h-full ${c.fitClass} group-hover:scale-105 transition-transform duration-300`}
-                      referrerPolicy="no-referrer"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        if (!target.dataset.tried) {
-                          target.dataset.tried = "true";
-                          target.src = c.image.replace("/uploads/", "/");
-                        } else {
-                          setFailedImages(prev => ({ ...prev, [c.id]: true }));
-                        }
+                      onError={() => {
+                        setFailedImages(prev => ({ ...prev, [c.id]: true }));
                       }}
                     />
                   ) : (
@@ -184,14 +178,11 @@ export const CaseStudiesSection: React.FC = () => {
             {/* Images Showcase */}
             <div className="lg:col-span-6 grid grid-cols-2 gap-3.5">
               <div className="relative group rounded-2xl overflow-hidden border border-slate-600 shadow-lg aspect-[4/3] bg-slate-800">
-                <img
+                <SafeImage
                   src="/uploads/su-kien-team-2024.jpg"
+                  fallbackSrc="/su-kien-team-2024.jpg"
                   alt="Sân khấu đào tạo YDVN"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  referrerPolicy="no-referrer"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = "/uploads/su-kien-thanh-cam-sach-ai.jpg";
-                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-2.5">
                   <span className="text-[11px] font-bold text-white leading-tight">
@@ -201,14 +192,11 @@ export const CaseStudiesSection: React.FC = () => {
               </div>
 
               <div className="relative group rounded-2xl overflow-hidden border border-slate-600 shadow-lg aspect-[4/3] bg-slate-800">
-                <img
+                <SafeImage
                   src="/uploads/su-kien-thanh-cam-sach-ai.jpg"
+                  fallbackSrc="/su-kien-thanh-cam-sach-ai.jpg"
                   alt="Thành Thật Thà chia sẻ quy trình AI Y tế"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  referrerPolicy="no-referrer"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = "/uploads/anh-thanh-dao-tao-online.jpg";
-                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-2.5">
                   <span className="text-[11px] font-bold text-white leading-tight">
@@ -218,14 +206,11 @@ export const CaseStudiesSection: React.FC = () => {
               </div>
 
               <div className="relative group rounded-2xl overflow-hidden border border-slate-600 shadow-lg aspect-[4/3] bg-slate-800">
-                <img
+                <SafeImage
                   src="/uploads/anh-thanh-dao-tao-online.jpg"
+                  fallbackSrc="/anh-thanh-dao-tao-online.jpg"
                   alt="Đào tạo Online trực tiếp cho học viên"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  referrerPolicy="no-referrer"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = "/uploads/mat-tien-pk-hoc-vien.jpg";
-                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-2.5">
                   <span className="text-[11px] font-bold text-white leading-tight">
@@ -235,14 +220,11 @@ export const CaseStudiesSection: React.FC = () => {
               </div>
 
               <div className="relative group rounded-2xl overflow-hidden border border-slate-600 shadow-lg aspect-[4/3] bg-slate-800">
-                <img
+                <SafeImage
                   src="/uploads/mat-tien-pk-hoc-vien.jpg"
+                  fallbackSrc="/mat-tien-pk-hoc-vien.jpg"
                   alt="Đồng hành thực địa tại các phòng khám"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  referrerPolicy="no-referrer"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = "/uploads/hoc-vien-cam-on.jpg";
-                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-2.5">
                   <span className="text-[11px] font-bold text-white leading-tight">

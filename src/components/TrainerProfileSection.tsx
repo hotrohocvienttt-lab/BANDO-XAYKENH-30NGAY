@@ -2,6 +2,7 @@ import React from "react";
 import { ShieldCheck, Award, Briefcase, ChevronRight } from "lucide-react";
 import { trackEvent } from "../utils/tracking";
 import { YdvnLogo } from "./YdvnLogo";
+import { SafeImage } from "./SafeImage";
 
 import { CONFIG } from "../config";
 
@@ -32,11 +33,11 @@ export const TrainerProfileSection: React.FC = () => {
           {/* Avatar image for Founder */}
           <div className="md:col-span-5 flex flex-col items-center text-center">
             <div className="w-full aspect-square max-w-[280px] rounded-3xl overflow-hidden shadow-xl border-4 border-white relative group">
-              <img
+              <SafeImage
                 src={founderImg}
+                fallbackSrc="/anh-thanh.jpeg"
                 alt="THÀNH THẬT THÀ"
                 className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
-                referrerPolicy="no-referrer"
               />
               <div className="absolute bottom-3 left-3 right-3 bg-[#0B2D46]/90 backdrop-blur-md p-2.5 rounded-xl text-white border border-white/20">
                 <span className="text-xs font-black text-amber-300 block">THÀNH THẬT THÀ</span>
