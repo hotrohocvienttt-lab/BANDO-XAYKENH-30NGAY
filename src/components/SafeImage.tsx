@@ -22,32 +22,25 @@ export const SafeImage: React.FC<SafeImageProps> = ({
       return src;
     }
     
-    // Attempt 0: Primary path with asset URL
+    // Attempt 0: Direct path (/uploads/filename)
     if (attempt === 0) {
       return getAssetUrl(src);
     }
     
-    // Attempt 1: Without /uploads/ prefix
+    // Attempt 1: Without /uploads/ prefix (/filename)
     if (attempt === 1) {
       const noUploads = src.replace('/uploads/', '/').replace(/^uploads\//, '');
       return getAssetUrl(noUploads);
     }
     
-    // Attempt 2: Direct relative ./ path
-    if (attempt === 2) {
-      const clean = src.startsWith('/') ? src.slice(1) : src;
-      return `./${clean}`;
-    }
-
-    // Attempt 3: Direct relative ./ path without uploads
-    if (attempt === 3) {
-      const cleanNoUploads = src.replace('/uploads/', '/').replace(/^uploads\//, '').replace(/^\//, '');
-      return `./${cleanNoUploads}`;
-    }
-
-    // Attempt 4: Fallback src if provided
-    if (attempt >= 4 && fallbackSrc) {
+    // Attempt 2: Fallback src if provided
+    if (attempt === 2 && fallbackSrc) {
       return getAssetUrl(fallbackSrc);
+    }
+
+    // Attempt 3: Cache buster on primary path
+    if (attempt === 3) {
+      return `${getAssetUrl(src)}?v=${Date.now()}`;
     }
 
     return getAssetUrl(src);
@@ -73,3 +66,4 @@ export const SafeImage: React.FC<SafeImageProps> = ({
     />
   );
 };
+
