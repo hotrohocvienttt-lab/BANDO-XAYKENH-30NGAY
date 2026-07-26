@@ -736,21 +736,10 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ defaultParti
             <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs space-y-2">
               <div className="flex items-center gap-2 text-sm font-black text-slate-900">
                 <Heart className="w-4 h-4 text-red-500 fill-red-500" />
-                <span>Hơn 150+ HV Hài Lòng ❤️</span>
+                <span>Hơn 200+ Học Viên Hài Lòng ❤️</span>
               </div>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Tham gia cùng hơn 150+ chủ phòng khám, bác sĩ, dược sĩ đã tự tin sử dụng quy trình xây kênh cùng AI để phát triển cơ sở.
-              </p>
-            </div>
-
-            {/* 7-Day Guarantee Card */}
-            <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs space-y-2">
-              <div className="flex items-center gap-2 text-sm font-black text-slate-900">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                <span>Bảo Đảm Hoàn Tiền 7 Ngày ✅</span>
-              </div>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Chúng tôi cam kết hoàn trả 100% số tiền bạn đã thanh toán, trong vòng 07 ngày, nếu không nhận được giá trị như mong muốn.
+                Tham gia cùng hơn 200+ chủ phòng khám, bác sĩ, dược sĩ đã tự tin sử dụng quy trình xây kênh cùng AI để phát triển cơ sở.
               </p>
             </div>
 

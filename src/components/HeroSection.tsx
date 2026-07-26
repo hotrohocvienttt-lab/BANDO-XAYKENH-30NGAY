@@ -184,14 +184,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onPrimaryCta }) => {
             <div className="bg-[#FFF1E6] border border-amber-200/80 rounded-3xl p-4 sm:p-5 shadow-md flex items-center gap-4">
               <div className="relative shrink-0">
                 <img
-                  src="/anh-thanh.jpg"
+                  src="/uploads/anh-dai-dien-anh-thanh.jpeg"
                   alt="THÀNH THẬT THÀ"
                   className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover object-top border-2 border-amber-300 shadow-md"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     if (!target.dataset.tried) {
                       target.dataset.tried = 'true';
-                      target.src = '/Ảnh đại diện Anh Thành.jpeg';
+                      target.src = '/anh-thanh.jpeg';
                     }
                   }}
                 />

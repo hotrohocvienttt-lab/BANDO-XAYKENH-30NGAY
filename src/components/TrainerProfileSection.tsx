@@ -56,26 +56,26 @@ export const TrainerProfileSection: React.FC = () => {
               </h3>
             </div>
 
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-medium">
-              “Thành không chỉ làm Content. Công việc của Thành và YDVN là kết nối định vị, nội dung, quảng cáo, Sale, CSKH và vận hành thành một hệ thống có thể đo lường, điều chỉnh và bàn giao cho đội ngũ.”
+            <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-medium bg-amber-50/80 p-3.5 rounded-2xl border border-amber-200/80">
+              “Thành Thật Thà không chỉ dạy xây kênh. Công việc của Thành và YDVN là giúp cơ sở y tế nghiên cứu thị trường, tìm ra điểm mạnh, thiết kế lại phễu, mô hình kinh doanh trước khi làm nội dung, quảng cáo, Sale, CSKH và vận hành thành một hệ thống có thể đo lường”
             </p>
 
             <div className="space-y-3 pt-1">
               <div className="flex items-start gap-3 text-xs sm:text-sm text-slate-800 font-semibold">
                 <ChevronRight className="w-5 h-5 text-[#FF4F00] shrink-0 mt-0.5" />
-                <span>Hơn tám năm làm Marketing và vận hành thực chiến trong ngành y tế & chăm sóc sức khỏe.</span>
+                <span>Thành đã có hơn 10 năm kinh nghiệm tự kinh doanh nhà thuốc phòng khám + hơn 6 năm đào tạo & setup hệ thống Sale/ Marketing và quy trình vận hành thực chiến trong ngành y tế.</span>
               </div>
               <div className="flex items-start gap-3 text-xs sm:text-sm text-slate-800 font-semibold">
                 <ChevronRight className="w-5 h-5 text-[#FF4F00] shrink-0 mt-0.5" />
-                <span>Trực tiếp tham gia cố vấn và thiết lập hệ thống cho nhiều dự án phòng khám, bệnh viện & dược sĩ.</span>
+                <span>Trực tiếp tham gia cố vấn và thiết lập hệ thống cho hơn 1000 dự án phòng khám, bệnh viện & bác sĩ/dược sĩ trên cả nước.</span>
               </div>
               <div className="flex items-start gap-3 text-xs sm:text-sm text-slate-800 font-semibold">
                 <ChevronRight className="w-5 h-5 text-[#FF4F00] shrink-0 mt-0.5" />
-                <span>Trải nghiệm toàn diện từ làm kịch bản Content, chạy Ads đến quy trình chốt lịch Sale & CSKH.</span>
+                <span>Có đủ trải nghiệm toàn diện từ làm kịch bản Content, chạy Ads đến quy trình chốt lịch Sale & CSKH.</span>
               </div>
               <div className="flex items-start gap-3 text-xs sm:text-sm text-slate-800 font-semibold">
                 <ChevronRight className="w-5 h-5 text-[#FF4F00] shrink-0 mt-0.5" />
-                <span>Hệ thống hóa toàn bộ kinh nghiệm thành Workbook, Prompt, Checklist, SOP và Dashboard sẵn sàng chuyển giao.</span>
+                <span>Có hệ thống hóa toàn bộ kinh nghiệm thành Workbook, Prompt, Checklist, SOP và Dashboard sẵn sàng chuyển giao.</span>
               </div>
             </div>
 

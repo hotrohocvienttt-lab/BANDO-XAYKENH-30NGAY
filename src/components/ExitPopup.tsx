@@ -62,13 +62,13 @@ export const ExitPopup: React.FC<ExitPopupProps> = ({ onConsultClick }) => {
         <div className="space-y-2.5">
           <div className="inline-flex items-center gap-1.5 text-xs font-black text-[#FF4F00] uppercase tracking-wider bg-amber-100/80 px-3.5 py-1 rounded-full border border-amber-300">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>ƯU ĐÃI ĐẶC BIỆT KHI ĐĂNG KÝ NGAY</span>
+            <span>⚡ BẠN MUỐN LÀ NGƯỜI DẪN DẮT THỊ TRƯỜNG Y TẾ?</span>
           </div>
           <h3 className="text-xl sm:text-2xl font-black text-[#0B2D46] leading-tight">
-            NHẬN MÃ GIẢM 100K & BỘ MẪU KỊCH BẢN Y TẾ!
+            HÃY ĐĂNG KÝ NGAY <br className="hidden sm:inline" />ĐỂ XÂY KÊNH TRƯỚC KHI ĐỐI THỦ CỦA BẠN CHIẾM LĨNH!
           </h3>
           <p className="text-slate-600 text-sm leading-relaxed">
-            Đăng ký sở hữu Bản Đồ Xây Kênh 30 Ngày ngay bây giờ để áp dụng ưu đãi <strong className="text-[#FF4F00]">giảm 100K (chỉ còn 699.000đ)</strong> cùng trọn bộ Quà Tặng Độc Quyền từ YDVN.
+            Đối thủ trong cùng khu vực/chuyên khoa của bạn cũng đang tìm cách tiếp cận bệnh nhân trên mạng xã hội mỗi ngày. Sở hữu ngay <strong className="text-[#FF4F00]">Bản Đồ Xây Kênh 30 Ngày cùng AI</strong> để bứt phá truyền thông và dẫn đầu thị trường ngay hôm nay.
           </p>
         </div>
 
@@ -77,13 +77,13 @@ export const ExitPopup: React.FC<ExitPopupProps> = ({ onConsultClick }) => {
             onClick={handleAction}
             className="w-full bg-[#FF4F00] hover:bg-[#E04500] text-white font-black text-sm sm:text-base py-4 px-6 rounded-2xl shadow-xl transition-all transform hover:-translate-y-0.5 cursor-pointer flex items-center justify-center gap-2 text-center"
           >
-            <span>NHẬN ƯU ĐÃI & ĐĂNG KÝ NGAY</span>
+            <span>ĐĂNG KÝ BỨT PHÁ TRƯỚC ĐỐI THỦ</span>
             <ArrowRight className="w-5 h-5 shrink-0" />
           </button>
         </div>
 
         <p className="text-xs text-slate-500 font-medium">
-          ⚡ Áp dụng duy nhất trong lượt truy cập này • Hỗ trợ kích hoạt tức thì qua Zalo
+          ⚡ Hỗ trợ kích hoạt tức thì • Nhận trọn bộ cẩm nang & công cụ YDVN
         </p>
       </div>
     </div>

@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Building2, Image } from "lucide-react";
 import { trackEvent } from "../utils/tracking";
 
 export const CaseStudiesSection: React.FC = () => {
+  const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
+
   const cases = [
     {
       id: "phuc-nguyen-duong",
       name: "PHÚC NGUYÊN ĐƯỜNG",
       image: "/uploads/logo-phuc-nguyen-duong.png",
-      imgPlaceholder: "ĐẶT ẢNH CASE STUDY PHÚC NGUYÊN ĐƯỜNG",
+      bgClass: "bg-white",
+      fitClass: "object-contain p-4",
+      imgPlaceholder: "DỰ ÁN PHÚC NGUYÊN ĐƯỜNG",
       desc: "Xây dựng kênh Y tế - Đông y chuẩn mực chuyên sâu",
       result: "Tăng trưởng thương hiệu & Tiếp cận hàng trăm ngàn người bệnh",
     },
@@ -16,7 +20,9 @@ export const CaseStudiesSection: React.FC = () => {
       id: "dr-chubby",
       name: "DR CHUBBY",
       image: "/uploads/bac-si-ydvn-xay-kenh.jpg",
-      imgPlaceholder: "ĐẶT ẢNH CASE STUDY DR CHUBBY",
+      bgClass: "bg-slate-900",
+      fitClass: "object-cover",
+      imgPlaceholder: "DỰ ÁN DR CHUBBY",
       desc: "Đồng hành xây dựng thương hiệu cá nhân Bác sĩ chuyên khoa",
       result: "Phát triển kênh TikTok & Facebook Y tế uy tín",
     },
@@ -24,7 +30,9 @@ export const CaseStudiesSection: React.FC = () => {
       id: "duoc-si-tra",
       name: "DƯỢC SĨ TRÀ",
       image: "/uploads/ket-qua-xay-kenh-ban-hang.jpg",
-      imgPlaceholder: "ĐẶT ẢNH CASE STUDY DƯỢC SĨ TRÀ",
+      bgClass: "bg-slate-900",
+      fitClass: "object-cover",
+      imgPlaceholder: "DỰ ÁN DƯỢC SĨ TRÀ",
       desc: "Quy trình chuyển đổi đơn hàng qua Video ngắn AI",
       result: "Tạo doanh thu trực tiếp từ kênh truyền thông Y dược",
     },
@@ -32,7 +40,9 @@ export const CaseStudiesSection: React.FC = () => {
       id: "nha-khoa-tam-an",
       name: "NHA KHOA TÂM AN",
       image: "/uploads/logo-tam-an-dental.png",
-      imgPlaceholder: "ĐẶT ẢNH CASE STUDY NHA KHOA TÂM AN",
+      bgClass: "bg-white",
+      fitClass: "object-contain p-4",
+      imgPlaceholder: "DỰ ÁN NHA KHOA TÂM AN",
       desc: "Chiến lược Marketing nội dung nha khoa chất lượng cao",
       result: "Bứt phá lượng khách hàng đặt lịch khám thực tế",
     },
@@ -40,7 +50,9 @@ export const CaseStudiesSection: React.FC = () => {
       id: "benh-vien-sante",
       name: "BỆNH VIỆN SANTE",
       image: "/uploads/benh-vien-sante.png",
-      imgPlaceholder: "ĐẶT ẢNH CASE STUDY BỆNH VIỆN SANTE",
+      bgClass: "bg-white",
+      fitClass: "object-contain p-4",
+      imgPlaceholder: "DỰ ÁN BỆNH VIỆN SANTE",
       desc: "YDVN tư vấn chiến lược truyền thông & Kỹ năng CSKH cho bệnh viện",
       result: "Chuẩn hóa quy trình truyền thông & Đào tạo kỹ năng CSKH y tế",
     },
@@ -48,7 +60,9 @@ export const CaseStudiesSection: React.FC = () => {
       id: "san-phu-khoa-bamboo-care",
       name: "SẢN PHỤ KHOA BAMBOO CARE",
       image: "/uploads/pk-san-phu-khoa-bamboocake.png",
-      imgPlaceholder: "ĐẶT ẢNH CASE STUDY SẢN PHỤ KHOA BAMBOO CARE",
+      bgClass: "bg-white",
+      fitClass: "object-contain p-4",
+      imgPlaceholder: "DỰ ÁN SẢN PHỤ KHOA BAMBOO CARE",
       desc: "Tư vấn xây kênh Sản phụ khoa uy tín & chuẩn y khoa",
       result: "Thu hút tệp phụ nữ & gia đình quan tâm sức khỏe",
     },
@@ -84,25 +98,22 @@ export const CaseStudiesSection: React.FC = () => {
             >
               <div className="space-y-4">
                 {/* Image / Case Study Frame */}
-                <div className="aspect-[16/10] bg-slate-900 rounded-2xl flex flex-col items-center justify-center text-center text-slate-300 border border-slate-700 relative overflow-hidden group">
-                  {c.image ? (
+                <div className={`aspect-[16/10] ${c.bgClass} rounded-2xl flex flex-col items-center justify-center text-center border border-slate-200 relative overflow-hidden group shadow-inner`}>
+                  {c.image && !failedImages[c.id] ? (
                     <img
                       src={c.image}
                       alt={c.name}
-                      className="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300"
+                      className={`w-full h-full ${c.fitClass} group-hover:scale-105 transition-transform duration-300`}
                       referrerPolicy="no-referrer"
-                      onError={(e) => {
-                        (e.target as HTMLElement).style.display = 'none';
+                      onError={() => {
+                        setFailedImages(prev => ({ ...prev, [c.id]: true }));
                       }}
                     />
                   ) : (
-                    <div className="p-4 flex flex-col items-center justify-center">
-                      <Image className="w-8 h-8 text-teal-400 mb-2 opacity-80" />
-                      <span className="text-xs font-mono text-amber-300 uppercase font-bold">
+                    <div className="p-4 flex flex-col items-center justify-center bg-slate-100 text-slate-700 w-full h-full">
+                      <Image className="w-8 h-8 text-[#0B9693] mb-2 opacity-80" />
+                      <span className="text-xs font-mono text-[#0B2D46] uppercase font-bold">
                         {c.imgPlaceholder}
-                      </span>
-                      <span className="text-[10px] text-slate-400 mt-1">
-                        (Khung hiển thị hình ảnh dự án)
                       </span>
                     </div>
                   )}
