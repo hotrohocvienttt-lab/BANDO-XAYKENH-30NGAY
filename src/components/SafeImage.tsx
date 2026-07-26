@@ -21,37 +21,48 @@ export const SafeImage: React.FC<SafeImageProps> = ({
     if (src.startsWith('http://') || src.startsWith('https://') || src.startsWith('data:')) {
       return src;
     }
-    
-    // Attempt 0: Direct path (/uploads/filename)
+
+    const cleanSrc = src.split('?')[0];
+
+    // Attempt 0: Primary path (/uploads/filename)
     if (attempt === 0) {
       return getAssetUrl(src);
     }
-    
+
     // Attempt 1: Without /uploads/ prefix (/filename)
     if (attempt === 1) {
-      const noUploads = src.replace('/uploads/', '/').replace(/^uploads\//, '');
+      const noUploads = cleanSrc.replace('/uploads/', '/').replace(/^uploads\//, '');
       return getAssetUrl(noUploads);
     }
-    
+
     // Attempt 2: Fallback src if provided
     if (attempt === 2 && fallbackSrc) {
       return getAssetUrl(fallbackSrc);
     }
 
-    // Attempt 3: Cache buster on primary path
+    // Attempt 3: Relative path (./uploads/filename)
     if (attempt === 3) {
-      return `${getAssetUrl(src)}?v=${Date.now()}`;
+      const clean = cleanSrc.startsWith('/') ? cleanSrc.slice(1) : cleanSrc;
+      return `./${clean}`;
+    }
+
+    // Attempt 4: Relative path without uploads (./filename)
+    if (attempt === 4) {
+      const cleanNoUploads = cleanSrc.replace('/uploads/', '/').replace(/^uploads\//, '').replace(/^\//, '');
+      return `./${cleanNoUploads}`;
     }
 
     return getAssetUrl(src);
   };
 
   const handleError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    if (attempt < 4) {
+    const maxAttempt = 4;
+    if (attempt < maxAttempt) {
       setAttempt((prev) => prev + 1);
-    }
-    if (onError) {
-      onError(e);
+    } else {
+      if (onError) {
+        onError(e);
+      }
     }
   };
 
@@ -66,4 +77,5 @@ export const SafeImage: React.FC<SafeImageProps> = ({
     />
   );
 };
+
 

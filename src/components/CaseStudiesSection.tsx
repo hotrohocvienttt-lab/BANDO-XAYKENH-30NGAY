@@ -11,6 +11,7 @@ export const CaseStudiesSection: React.FC = () => {
       id: "phuc-nguyen-duong",
       name: "PHÚC NGUYÊN ĐƯỜNG",
       image: "/uploads/logo-phuc-nguyen-duong.png",
+      fallbackSrc: "/logo-phuc-nguyen-duong.png",
       bgClass: "bg-white",
       fitClass: "object-contain p-4",
       imgPlaceholder: "DỰ ÁN PHÚC NGUYÊN ĐƯỜNG",
@@ -20,7 +21,8 @@ export const CaseStudiesSection: React.FC = () => {
     {
       id: "dr-chubby",
       name: "DR CHUBBY",
-      image: "/uploads/dr-chubby.jpg?v=3",
+      image: "/uploads/dr-chubby.jpg",
+      fallbackSrc: "/dr-chubby.jpg",
       bgClass: "bg-slate-900",
       fitClass: "object-cover",
       imgPlaceholder: "DỰ ÁN DR CHUBBY",
@@ -31,6 +33,7 @@ export const CaseStudiesSection: React.FC = () => {
       id: "duoc-si-tra",
       name: "DƯỢC SĨ TRÀ",
       image: "/uploads/ket-qua-xay-kenh-ban-hang.jpg",
+      fallbackSrc: "/ket-qua-xay-kenh-ban-hang.jpg",
       bgClass: "bg-slate-900",
       fitClass: "object-cover",
       imgPlaceholder: "DỰ ÁN DƯỢC SĨ TRÀ",
@@ -41,6 +44,7 @@ export const CaseStudiesSection: React.FC = () => {
       id: "nha-khoa-tam-an",
       name: "NHA KHOA TÂM AN",
       image: "/uploads/logo-tam-an-dental.png",
+      fallbackSrc: "/logo-tam-an-dental.png",
       bgClass: "bg-white",
       fitClass: "object-contain p-4",
       imgPlaceholder: "DỰ ÁN NHA KHOA TÂM AN",
@@ -51,6 +55,7 @@ export const CaseStudiesSection: React.FC = () => {
       id: "benh-vien-sante",
       name: "BỆNH VIỆN SANTE",
       image: "/uploads/benh-vien-sante.png",
+      fallbackSrc: "/benh-vien-sante.png",
       bgClass: "bg-white",
       fitClass: "object-contain p-4",
       imgPlaceholder: "DỰ ÁN BỆNH VIỆN SANTE",
@@ -61,6 +66,7 @@ export const CaseStudiesSection: React.FC = () => {
       id: "san-phu-khoa-bamboo-care",
       name: "SẢN PHỤ KHOA BAMBOO CARE",
       image: "/uploads/pk-san-phu-khoa-bamboocake.png",
+      fallbackSrc: "/pk-san-phu-khoa-bamboocake.png",
       bgClass: "bg-white",
       fitClass: "object-contain p-4",
       imgPlaceholder: "DỰ ÁN SẢN PHỤ KHOA BAMBOO CARE",
@@ -103,6 +109,7 @@ export const CaseStudiesSection: React.FC = () => {
                   {c.image && !failedImages[c.id] ? (
                     <SafeImage
                       src={c.image}
+                      fallbackSrc={c.fallbackSrc}
                       alt={c.name}
                       className={`w-full h-full ${c.fitClass} group-hover:scale-105 transition-transform duration-300`}
                       onError={() => {
