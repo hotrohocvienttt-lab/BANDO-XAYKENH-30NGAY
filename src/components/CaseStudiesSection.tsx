@@ -3,6 +3,18 @@ import { Building2, Image } from "lucide-react";
 import { trackEvent } from "../utils/tracking";
 import { SafeImage } from "./SafeImage";
 
+import logoPhucNguyenDuong from "../assets/logo-phuc-nguyen-duong.png";
+import drChubbyImg from "../assets/dr-chubby.jpg";
+import ketQuaXayKenhImg from "../assets/ket-qua-xay-kenh-ban-hang.jpg";
+import logoTamAnImg from "../assets/logo-tam-an-dental.png";
+import benhVienSanteImg from "../assets/benh-vien-sante.png";
+import pkBambooCareImg from "../assets/pk-san-phu-khoa-bamboocake.png";
+
+import suKienTeamImg from "../assets/su-kien-team-2024.jpg";
+import suKienSachAiImg from "../assets/su-kien-thanh-cam-sach-ai.jpg";
+import daoTaoOnlineImg from "../assets/anh-thanh-dao-tao-online.jpg";
+import matTienPkImg from "../assets/mat-tien-pk-hoc-vien.jpg";
+
 export const CaseStudiesSection: React.FC = () => {
   const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
 
@@ -10,8 +22,7 @@ export const CaseStudiesSection: React.FC = () => {
     {
       id: "phuc-nguyen-duong",
       name: "PHÚC NGUYÊN ĐƯỜNG",
-      image: "/uploads/logo-phuc-nguyen-duong.png",
-      fallbackSrc: "/logo-phuc-nguyen-duong.png",
+      image: logoPhucNguyenDuong,
       bgClass: "bg-white",
       fitClass: "object-contain p-4",
       imgPlaceholder: "DỰ ÁN PHÚC NGUYÊN ĐƯỜNG",
@@ -21,8 +32,7 @@ export const CaseStudiesSection: React.FC = () => {
     {
       id: "dr-chubby",
       name: "DR CHUBBY",
-      image: "/uploads/dr-chubby.jpg",
-      fallbackSrc: "/dr-chubby.jpg",
+      image: drChubbyImg,
       bgClass: "bg-slate-900",
       fitClass: "object-cover",
       imgPlaceholder: "DỰ ÁN DR CHUBBY",
@@ -32,8 +42,7 @@ export const CaseStudiesSection: React.FC = () => {
     {
       id: "duoc-si-tra",
       name: "DƯỢC SĨ TRÀ",
-      image: "/uploads/ket-qua-xay-kenh-ban-hang.jpg",
-      fallbackSrc: "/ket-qua-xay-kenh-ban-hang.jpg",
+      image: ketQuaXayKenhImg,
       bgClass: "bg-slate-900",
       fitClass: "object-cover",
       imgPlaceholder: "DỰ ÁN DƯỢC SĨ TRÀ",
@@ -43,8 +52,7 @@ export const CaseStudiesSection: React.FC = () => {
     {
       id: "nha-khoa-tam-an",
       name: "NHA KHOA TÂM AN",
-      image: "/uploads/logo-tam-an-dental.png",
-      fallbackSrc: "/logo-tam-an-dental.png",
+      image: logoTamAnImg,
       bgClass: "bg-white",
       fitClass: "object-contain p-4",
       imgPlaceholder: "DỰ ÁN NHA KHOA TÂM AN",
@@ -54,8 +62,7 @@ export const CaseStudiesSection: React.FC = () => {
     {
       id: "benh-vien-sante",
       name: "BỆNH VIỆN SANTE",
-      image: "/uploads/benh-vien-sante.png",
-      fallbackSrc: "/benh-vien-sante.png",
+      image: benhVienSanteImg,
       bgClass: "bg-white",
       fitClass: "object-contain p-4",
       imgPlaceholder: "DỰ ÁN BỆNH VIỆN SANTE",
@@ -65,8 +72,7 @@ export const CaseStudiesSection: React.FC = () => {
     {
       id: "san-phu-khoa-bamboo-care",
       name: "SẢN PHỤ KHOA BAMBOO CARE",
-      image: "/uploads/pk-san-phu-khoa-bamboocake.png",
-      fallbackSrc: "/pk-san-phu-khoa-bamboocake.png",
+      image: pkBambooCareImg,
       bgClass: "bg-white",
       fitClass: "object-contain p-4",
       imgPlaceholder: "DỰ ÁN SẢN PHỤ KHOA BAMBOO CARE",
@@ -109,7 +115,6 @@ export const CaseStudiesSection: React.FC = () => {
                   {c.image && !failedImages[c.id] ? (
                     <SafeImage
                       src={c.image}
-                      fallbackSrc={c.fallbackSrc}
                       alt={c.name}
                       className={`w-full h-full ${c.fitClass} group-hover:scale-105 transition-transform duration-300`}
                       onError={() => {
@@ -186,8 +191,7 @@ export const CaseStudiesSection: React.FC = () => {
             <div className="lg:col-span-6 grid grid-cols-2 gap-3.5">
               <div className="relative group rounded-2xl overflow-hidden border border-slate-600 shadow-lg aspect-[4/3] bg-slate-800">
                 <SafeImage
-                  src="/uploads/su-kien-team-2024.jpg"
-                  fallbackSrc="/su-kien-team-2024.jpg"
+                  src={suKienTeamImg}
                   alt="Sân khấu đào tạo YDVN"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -200,8 +204,7 @@ export const CaseStudiesSection: React.FC = () => {
 
               <div className="relative group rounded-2xl overflow-hidden border border-slate-600 shadow-lg aspect-[4/3] bg-slate-800">
                 <SafeImage
-                  src="/uploads/su-kien-thanh-cam-sach-ai.jpg"
-                  fallbackSrc="/su-kien-thanh-cam-sach-ai.jpg"
+                  src={suKienSachAiImg}
                   alt="Thành Thật Thà chia sẻ quy trình AI Y tế"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -214,8 +217,7 @@ export const CaseStudiesSection: React.FC = () => {
 
               <div className="relative group rounded-2xl overflow-hidden border border-slate-600 shadow-lg aspect-[4/3] bg-slate-800">
                 <SafeImage
-                  src="/uploads/anh-thanh-dao-tao-online.jpg"
-                  fallbackSrc="/anh-thanh-dao-tao-online.jpg"
+                  src={daoTaoOnlineImg}
                   alt="Đào tạo Online trực tiếp cho học viên"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -228,8 +230,7 @@ export const CaseStudiesSection: React.FC = () => {
 
               <div className="relative group rounded-2xl overflow-hidden border border-slate-600 shadow-lg aspect-[4/3] bg-slate-800">
                 <SafeImage
-                  src="/uploads/mat-tien-pk-hoc-vien.jpg"
-                  fallbackSrc="/mat-tien-pk-hoc-vien.jpg"
+                  src={matTienPkImg}
                   alt="Đồng hành thực địa tại các phòng khám"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />

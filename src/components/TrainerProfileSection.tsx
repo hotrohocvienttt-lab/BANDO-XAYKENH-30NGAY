@@ -3,6 +3,7 @@ import { ShieldCheck, Award, Briefcase, ChevronRight } from "lucide-react";
 import { trackEvent } from "../utils/tracking";
 import { YdvnLogo } from "./YdvnLogo";
 import { SafeImage } from "./SafeImage";
+import trainerImg from "../assets/nhathuocphongkhamkieumoi-107.jpg";
 
 import { CONFIG } from "../config";
 
@@ -11,7 +12,7 @@ export const TrainerProfileSection: React.FC = () => {
     trackEvent("trainer_view", "Trainer Profile Section");
   };
 
-  const founderImg = CONFIG.founderImageUrl || "/uploads/nhathuocphongkhamkieumoi-107.jpg";
+  const founderImg = trainerImg;
 
   return (
     <section id="nguoi-huong-dan" className="py-16 md:py-24 bg-[#FFFEFB] border-b border-slate-200/80" onClick={handleSectionClick}>

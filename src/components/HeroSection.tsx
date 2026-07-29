@@ -4,6 +4,7 @@ import { CONFIG } from "../config";
 import { trackEvent } from "../utils/tracking";
 import { YdvnLogo } from "./YdvnLogo";
 import { SafeImage } from "./SafeImage";
+import trainerImg from "../assets/nhathuocphongkhamkieumoi-107.jpg";
 
 interface HeroSectionProps {
   onPrimaryCta: () => void;
@@ -185,8 +186,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onPrimaryCta }) => {
             <div className="bg-[#FFF1E6] border border-amber-200/80 rounded-3xl p-4 sm:p-5 shadow-md flex items-center gap-4">
               <div className="relative shrink-0">
                 <SafeImage
-                  src="/uploads/nhathuocphongkhamkieumoi-107.jpg"
-                  fallbackSrc="/nhathuocphongkhamkieumoi-107.jpg"
+                  src={trainerImg}
                   alt="THÀNH THẬT THÀ"
                   className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover object-top border-2 border-amber-300 shadow-md"
                 />
