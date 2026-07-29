@@ -11,7 +11,7 @@ export const TrainerProfileSection: React.FC = () => {
     trackEvent("trainer_view", "Trainer Profile Section");
   };
 
-  const founderImg = CONFIG.founderImageUrl || "/uploads/anh-dai-dien-anh-thanh.jpeg";
+  const founderImg = CONFIG.founderImageUrl || "/uploads/nhathuocphongkhamkieumoi-107.jpg";
 
   return (
     <section id="nguoi-huong-dan" className="py-16 md:py-24 bg-[#FFFEFB] border-b border-slate-200/80" onClick={handleSectionClick}>
@@ -35,7 +35,7 @@ export const TrainerProfileSection: React.FC = () => {
             <div className="w-full aspect-square max-w-[280px] rounded-3xl overflow-hidden shadow-xl border-4 border-white relative group">
               <SafeImage
                 src={founderImg}
-                fallbackSrc="/anh-thanh.jpeg"
+                fallbackSrc="/nhathuocphongkhamkieumoi-107.jpg"
                 alt="THÀNH THẬT THÀ"
                 className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
               />

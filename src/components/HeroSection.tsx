@@ -185,8 +185,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onPrimaryCta }) => {
             <div className="bg-[#FFF1E6] border border-amber-200/80 rounded-3xl p-4 sm:p-5 shadow-md flex items-center gap-4">
               <div className="relative shrink-0">
                 <SafeImage
-                  src="/uploads/anh-dai-dien-anh-thanh.jpeg"
-                  fallbackSrc="/anh-thanh.jpeg"
+                  src="/uploads/nhathuocphongkhamkieumoi-107.jpg"
+                  fallbackSrc="/nhathuocphongkhamkieumoi-107.jpg"
                   alt="THÀNH THẬT THÀ"
                   className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover object-top border-2 border-amber-300 shadow-md"
                 />
