@@ -18,8 +18,9 @@ export const SafeImage: React.FC<SafeImageProps> = ({
   if (!src) return null;
 
   const getSource = (): string => {
-    if (src.startsWith('http://') || src.startsWith('https://') || src.startsWith('data:')) {
-      return src;
+    const processedSrc = getAssetUrl(src);
+    if (processedSrc.startsWith('http://') || processedSrc.startsWith('https://') || processedSrc.startsWith('data:')) {
+      return processedSrc;
     }
 
     const cleanSrc = src.split('?')[0];
