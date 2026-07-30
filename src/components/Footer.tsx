@@ -15,7 +15,18 @@ export const Footer: React.FC = () => {
           {/* Brand Info */}
           <div className="md:col-span-6 space-y-3">
             <div className="flex items-center gap-3">
-              <YdvnLogo className="w-10 h-10 sm:w-11 sm:h-11 shrink-0" />
+              {CONFIG.logoUrl ? (
+                <img
+                  src={CONFIG.logoUrl}
+                  alt={CONFIG.brandName}
+                  className="w-10 h-10 sm:w-11 sm:h-11 object-contain shrink-0"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLElement).style.display = 'none';
+                  }}
+                />
+              ) : (
+                <YdvnLogo className="w-10 h-10 sm:w-11 sm:h-11 shrink-0" />
+              )}
               <div className="flex flex-col">
                 <span className="font-black text-xl text-white tracking-wider leading-snug">
                   {CONFIG.brandName}

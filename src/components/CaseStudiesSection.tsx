@@ -32,7 +32,7 @@ export const CaseStudiesSection: React.FC = () => {
     {
       id: "dr-chubby",
       name: "DR CHUBBY",
-      image: drChubbyImg,
+      image: "https://www.dropbox.com/scl/fi/uo7oqxk2yrx89vy3iwvkw/dr-chubby.jpg?rlkey=00u4xhddvbhh6v1242pu5p3yp&st=bfx0gdl7&dl=1",
       bgClass: "bg-slate-900",
       fitClass: "object-cover",
       imgPlaceholder: "DỰ ÁN DR CHUBBY",

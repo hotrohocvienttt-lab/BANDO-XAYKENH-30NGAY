@@ -38,7 +38,19 @@ export const Header: React.FC<HeaderProps> = ({ onRegisterClick }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
         {/* Brand Logo */}
         <a href="#" className="flex items-center gap-2.5 group">
-          <YdvnLogo className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 transition-transform group-hover:scale-105" />
+          {CONFIG.logoUrl ? (
+            <img
+              src={CONFIG.logoUrl}
+              alt={CONFIG.brandName}
+              className="w-10 h-10 sm:w-12 sm:h-12 object-contain shrink-0 transition-transform group-hover:scale-105"
+              onError={(e) => {
+                // If image fails, hide image and show fallback SVG
+                (e.currentTarget as HTMLElement).style.display = 'none';
+              }}
+            />
+          ) : (
+            <YdvnLogo className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 transition-transform group-hover:scale-105" />
+          )}
           <div className="flex flex-col justify-center">
             <span className="font-extrabold text-lg sm:text-xl text-[#0B2D46] tracking-tight group-hover:text-[#0B9693] transition-colors leading-snug">
               {CONFIG.brandName}

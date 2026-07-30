@@ -44,7 +44,7 @@ export const CONFIG: YdvnConfig = {
   checkoutUrl: "",
   zaloUrl: "https://zalo.me/0345118637",
 
-  logoUrl: "/uploads/logo-ydvn.png",
+  logoUrl: "https://www.dropbox.com/scl/fi/ag489ky892fq5ex60nh20/logo-ydvn.png?rlkey=7s6p5rlf6yu45ws6yn1anknvp&st=wp201t1h&dl=1",
   founderImageUrl: "/uploads/nhathuocphongkhamkieumoi-107.jpg",
   teamImageUrl: "/uploads/su-kien-team-2024.jpg",
   productCoverUrl: "/uploads/gioi-thieu-ve-thanh-that-tha.png",
