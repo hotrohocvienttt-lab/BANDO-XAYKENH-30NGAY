@@ -22,17 +22,17 @@ export const CaseStudiesSection: React.FC = () => {
     {
       id: "phuc-nguyen-duong",
       name: "PHÚC NGUYÊN ĐƯỜNG",
-      image: logoPhucNguyenDuong,
+      image: "https://drive.google.com/file/d/1-7iXCzHbD2u-q_XFon6oYirCZ26oSFBe/view?usp=drive_link",
       bgClass: "bg-white",
-      fitClass: "object-contain p-4",
+      fitClass: "object-cover",
       imgPlaceholder: "DỰ ÁN PHÚC NGUYÊN ĐƯỜNG",
       desc: "Xây dựng kênh Y tế - Đông y chuẩn mực chuyên sâu",
-      result: "Tăng trưởng thương hiệu & Tiếp cận hàng trăm ngàn người bệnh",
+      result: "Từ 1 phòng khám mất hết khách vì đóng cửa quá lâu đến lấy lại vị thế trong khu vực",
     },
     {
       id: "dr-chubby",
       name: "DR CHUBBY",
-      image: "https://drive.google.com/file/d/1apGr97NWvVRxzhoSi-p7kRH4V_55iMXm/view?usp=drive_link",
+      image: "https://www.dropbox.com/scl/fi/uo7oqxk2yrx89vy3iwvkw/dr-chubby.jpg?rlkey=00u4xhddvbhh6v1242pu5p3yp&st=bfx0gdl7&dl=1",
       bgClass: "bg-slate-900",
       fitClass: "object-cover",
       imgPlaceholder: "DỰ ÁN DR CHUBBY",
@@ -191,7 +191,7 @@ export const CaseStudiesSection: React.FC = () => {
             <div className="lg:col-span-6 grid grid-cols-2 gap-3.5">
               <div className="relative group rounded-2xl overflow-hidden border border-slate-600 shadow-lg aspect-[4/3] bg-slate-800">
                 <SafeImage
-                  src={suKienTeamImg}
+                  src="https://drive.google.com/file/d/1g8dNo3CpR1khL3_B6H1au44A93bztfxa/view?usp=drive_link"
                   alt="Sân khấu đào tạo YDVN"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />

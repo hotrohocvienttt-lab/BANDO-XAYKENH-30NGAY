@@ -19,6 +19,24 @@ export const SafeImage: React.FC<SafeImageProps> = ({
 
   const getSource = (): string => {
     const processedSrc = getAssetUrl(src);
+
+    if (attempt === 0) {
+      return processedSrc;
+    }
+
+    // Google Drive alternative link
+    if (attempt === 1 && src.includes('drive.google.com')) {
+      const fileDMatch = src.match(/\/file\/d\/([a-zA-Z0-9_-]+)/) || src.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+      if (fileDMatch && fileDMatch[1]) {
+        return `https://drive.google.com/uc?export=view&id=${fileDMatch[1]}`;
+      }
+    }
+
+    // Fallback image if primary URL fails
+    if (fallbackSrc && (attempt >= 2 || (attempt >= 1 && !src.includes('drive.google.com')))) {
+      return getAssetUrl(fallbackSrc);
+    }
+
     if (processedSrc.startsWith('http://') || processedSrc.startsWith('https://') || processedSrc.startsWith('data:')) {
       return processedSrc;
     }
